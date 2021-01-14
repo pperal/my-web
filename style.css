@@ -2,11 +2,17 @@
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 :root {
-  --size: 40;
+  --size: 25;
   --unit: calc((var(--size) / 195) * 1vmin);
+}
+body {
+  font-family: "Roboto", sans-serif;
+  color: rgb(36, 35, 35);
 }
 .layout {
   height: 100%;
@@ -16,6 +22,7 @@
   border: 1px solid black;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 .header-section {
   height: 100%;
@@ -26,15 +33,28 @@
   align-items: center;
   text-align: center;
   margin: auto;
-  margin-top: 5%;
+  margin-top: 20vh;
 }
+
+@media only screen and (max-width: 767px) {
+  .header-section {
+    margin-top: 10vh;
+  }
+  .name {
+    font-size: calc(50 * var(--unit)) !important;
+  }
+}
+
 .header-title {
   text-align: center;
   height: 100%;
   width: auto;
   border: 1px solid red;
   background-color: rgba(220, 20, 60, 0.466);
-  display: inline-block;
+
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
 }
 img {
   float: left;
@@ -48,10 +68,37 @@ img {
   flex-direction: column;
   border: 3px solid green;
   background-color: rgba(255, 68, 0, 0.418);
+  font-size: calc(70 * var(--unit));
+  line-height: calc(1.7em + 0.5vw);
+  margin-left: 4px;
 }
+
+h2 {
+  padding: 5vh 20vw;
+  font-size: calc(30 * var(--unit));
+  font-weight: 300;
+}
+
 .name-1 {
-  font-size: 100px;
+  background-color: rgba(153, 50, 204, 0.493);
+  transform: perspective(10px) rotateY(0.3deg);
+  margin-left: 8px;
+  padding: 4px;
 }
-.name-2 {
-  font-size: 85px;
+
+.sidebar {
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255, 255, 0, 0.384);
+  margin-top: 40vh;
+}
+li {
+  padding: 5px;
+}
+a {
+  text-decoration: none;
+}
+ion-icon {
+  font-size: 50px;
 }

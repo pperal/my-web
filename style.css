@@ -90,15 +90,31 @@ h2 {
   position: fixed;
   display: flex;
   flex-direction: column;
-  background-color: rgba(255, 255, 0, 0.384);
+
   margin-top: 40vh;
 }
 li {
-  padding: 5px;
+  padding: 15px 10px;
 }
 a {
   text-decoration: none;
 }
 ion-icon {
   font-size: 50px;
+}
+
+.sidebar-lists {
+  background-color: chartreuse;
+  padding: 40px 0;
+  clip-path: polygon(100% 16%, 100% 85%, 0 100%, 0 0);
+}
+.nav-link :link,
+.nav-link :visited {
+  padding-top: 20px;
+  transition: all 0.3s;
+}
+.nav-link :hover,
+.nav-link :active {
+  color: orangered;
+  padding-left: 10px;
 }

@@ -18,11 +18,16 @@
   .name {
     font-size: calc(50 * var(--unit)) !important;
   }
+  h2 {
+    padding: 3vh 15vw !important;
+    font-size: calc(35 * var(--unit)) !important;
+  }
 }
 
 body {
   font-family: "Roboto", sans-serif;
   color: rgb(36, 35, 35);
+  background-color: #f8e7b4;
 }
 .layout {
   height: 100%;
@@ -38,8 +43,7 @@ body {
 .header-section {
   height: 100%;
   width: 100%;
-  border: 1px solid blue;
-  background-color: rgba(128, 255, 0, 0.377);
+
   align-content: center;
   align-items: center;
   text-align: center;
@@ -51,8 +55,6 @@ body {
   text-align: center;
   height: 100%;
   width: auto;
-  border: 1px solid red;
-  background-color: rgba(220, 20, 60, 0.466);
 
   display: inline-flex;
   justify-content: center;
@@ -68,8 +70,7 @@ img {
   text-align: left;
   display: flex;
   flex-direction: column;
-  border: 3px solid green;
-  background-color: rgba(255, 68, 0, 0.418);
+
   font-size: calc(70 * var(--unit));
   line-height: calc(1.7em + 0.5vw);
   margin-left: 4px;
@@ -78,14 +79,15 @@ img {
 h2 {
   padding: 5vh 20vw;
   font-size: calc(30 * var(--unit));
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .name-1 {
-  background-color: rgba(153, 50, 204, 0.493);
+  background-color: #d95400;
   transform: perspective(10px) rotateY(0.3deg);
   margin-left: 8px;
   padding: 4px;
+  color: #fdeaa2;
 }
 /*------------------------------ nav ---------*/
 .sidebar {
@@ -101,22 +103,23 @@ li {
 a {
   text-decoration: none;
 }
-ion-icon {
+.material-icons {
   font-size: calc(50 * var(--unit));
+  color: #fee68e;
 }
 
 .sidebar-lists {
-  background-color: chartreuse;
+  background-color: #664535;
   padding: 40px 0;
   clip-path: polygon(100% 16%, 100% 85%, 0 100%, 0 0);
   transition: color 0.5s;
 }
-.nav-link :link {
+.nav-link .material-icons :link {
   padding-top: 0;
-  transition: all 0.3s;
+  transition: all 0.4s;
 }
 .nav-link :hover {
-  color: orangered;
+  color: #dd7d32;
   padding-left: 10px;
 }
 /*---------------------------switch -------------*/
@@ -132,7 +135,7 @@ main {
   border-radius: 50px;
   width: 3rem;
   padding: 0.3rem;
-  background-color: darkslateblue;
+  background-color: #d95400;
   transition: background-color 0.2s;
   cursor: pointer;
   position: absolute;
@@ -149,21 +152,34 @@ main {
 }
 /* Dark Theme */
 .dark-theme .sidebar-lists {
-  background-color: rgb(32, 32, 32);
+  background-color: rgb(46, 46, 46);
 }
 .dark-theme .layout {
   color: #e4e4e4;
-  background-color: rgb(18, 18, 18);
+  background-color: rgb(32, 32, 32);
 }
-.dark-theme .nav-link :link {
+.dark-theme .nav-link .material-icons:link {
   color: #e4e4e4;
+  transition: all 0.2s;
+}
+.dark-theme .nav-link .material-icons:hover {
+  color: #7c7979;
 }
 .dark-theme .switch {
   background-color: rgba(255, 255, 255, 0.253);
 }
-.dark-theme ion-icon {
+.dark-theme .material-icons {
   color: #e4e4e4;
 }
 .dark-theme .btn-toggle {
   transform: translateX(20px);
+}
+.dark-theme .material-icons {
+  font-size: calc(50 * var(--unit));
+  color: #ffffff;
+  transition: color 0.2s;
+}
+.dark-theme .name-1 {
+  background-color: rgb(46, 46, 46);
+  color: #e4e4e4;
 }

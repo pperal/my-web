@@ -11,7 +11,7 @@
   --c3: #d95400;
   --c4: #fee68e;
   --c5: #fbfbf0;
-  --c6: #e6947e;
+  --c6: #eea895;
   --c7: #dd7d32;
   --unit: calc((var(--size) / 306) * 1vmin);
 }
@@ -63,7 +63,7 @@ body {
   left: 51%;
   transform: translate(-50%, 50%);
   border-radius: 58%;
-  border: calc(1 * var(--unit)) solid var(--c7);
+
   overflow: hidden;
 }
 .color-1 {

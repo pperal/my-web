@@ -1,0 +1,252 @@
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+:root {
+  --bg: #fff;
+  --size: 45;
+  --c1: #664535;
+  --c2: #35251e;
+  --c3: #d95400;
+  --c4: #fee68e;
+  --c5: #fbfbf0;
+  --c6: #e6947e;
+  --c7: #dd7d32;
+  --unit: calc((var(--size) / 306) * 1vmin);
+}
+body {
+  background-color: var(--bg);
+  min-height: 100vh;
+}
+
+.cat {
+  height: calc(288 * var(--unit));
+  width: calc(306 * var(--unit));
+  position: relative;
+}
+.ear {
+  height: 40%;
+  width: 60%;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 0);
+  top: 5%;
+}
+
+.ears {
+  height: 100%;
+  width: 41%;
+  position: absolute;
+  top: 0;
+  background-color: var(--c6);
+}
+.ear_left {
+  border-radius: 60% 40% 0 0 / 100% 99% 0 0;
+  transform: rotate(-15deg);
+  left: -2%;
+  border: calc(7 * var(--unit)) solid var(--c1);
+}
+
+.ear_right {
+  right: -8%;
+  border-radius: 40% 60% 0 0 / 99% 100% 0 0;
+  transform: rotate(15deg);
+  border: calc(9 * var(--unit)) solid var(--c3);
+}
+/*-------------------head --------------*/
+.head {
+  height: 60%;
+  width: 64%;
+  background-color: var(--c5);
+  position: absolute;
+  left: 51%;
+  transform: translate(-50%, 50%);
+  border-radius: 58%;
+  border: calc(1 * var(--unit)) solid var(--c7);
+  overflow: hidden;
+}
+.color-1 {
+  height: 97%;
+  width: 80%;
+  border-radius: 50%;
+  position: absolute;
+  left: -33%;
+  top: -30%;
+  background-color: var(--c1);
+}
+.color-2 {
+  height: 90%;
+  width: 70%;
+  border-radius: 50%;
+  position: absolute;
+  right: -27%;
+  top: -40%;
+  background-color: var(--c7);
+}
+
+.line-h {
+  height: 90%;
+  width: 7%;
+  border-radius: 40%;
+  position: absolute;
+}
+.color-3 {
+  right: 45%;
+  top: -67%;
+  background-color: var(--c2);
+}
+
+.color-4 {
+  right: 35%;
+  top: -69%;
+  background-color: var(--c2);
+}
+.color-5 {
+  right: 55%;
+  top: -69%;
+  background-color: var(--c2);
+}
+
+.eyes {
+  height: 30%;
+  width: 26%;
+  background-color: var(--c4);
+  position: absolute;
+  border-radius: 50%;
+  top: 32%;
+}
+.eye-left {
+  top: 32%;
+  left: 16%;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.eye-right {
+  top: 32%;
+  left: 58%;
+  overflow: hidden;
+}
+.eyeball {
+  height: 60%;
+  width: 60%;
+  border-radius: 50%;
+  background-color: #35251e;
+  transform: translate(50%, 50%);
+  transition: color 0.5s;
+}
+.nose {
+  height: 8%;
+  width: 10%;
+  position: absolute;
+  right: 44%;
+  top: 60%;
+  background-color: var(--c6);
+  border-radius: 50%;
+}
+.line {
+  height: 1%;
+  width: 26%;
+  border-radius: 50%;
+  background-color: var(--c2);
+  position: absolute;
+}
+.whisker-left-1 {
+  transform: rotate(13deg);
+  top: 55%;
+  left: 0;
+}
+.whisker-left-2 {
+  transform: rotate(-13deg);
+  top: 70%;
+  left: 0;
+}
+.whisker-right-1 {
+  transform: rotate(13deg);
+  top: 70%;
+  right: 0;
+}
+.whisker-right-2 {
+  transform: rotate(-13deg);
+  top: 58%;
+  right: 0;
+}
+
+.switch {
+  display: flex;
+  border-radius: 50px;
+  width: 3rem;
+  padding: 0.3rem;
+  background-color: darkslateblue;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.btn-toggle {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  background-color: white;
+  transition: transform 0.1s;
+}
+
+/* Dark Theme */
+.dark-theme {
+  background-color: rgb(18, 18, 18);
+}
+
+.dark-theme .switch {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .btn-toggle {
+  transform: translateX(20px);
+}
+/*--------------------------*/
+.dark-theme .eyeball {
+  background-color: rgb(255, 255, 255);
+  width: 70%;
+  height: 70%;
+}
+
+.dark-theme .eyes {
+  background-color: rgb(238, 226, 226);
+  box-shadow: 0 0 3px #ffffff, 0 0 23px #ffffff;
+}
+
+.dark-theme .color-1 {
+  background-color: black;
+}
+.dark-theme .color-2 {
+  background-color: black;
+}
+.dark-theme .color-3 {
+  background-color: black;
+}
+.dark-theme .color-4 {
+  background-color: black;
+}
+.dark-theme .color-5 {
+  background-color: black;
+}
+.dark-theme .line {
+  background-color: black;
+}
+.dark-theme .ears {
+  background-color: black;
+}
+.dark-theme .nose {
+  background-color: black;
+}
+.dark-theme .head {
+  background-color: black;
+  border: black;
+}
+.dark-theme .ear_left {
+  background-color: black;
+  border: black;
+}
+.dark-theme .ear_right {
+  background-color: black;
+  border: black;
+}

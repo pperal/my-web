@@ -1,185 +1,68 @@
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;800;900&display=swap");
+
+* {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
-
-:root {
-  --size: 25;
-  --unit: calc((var(--size) / 195) * 1vmin);
-}
-
-@media only screen and (max-width: 767px) {
-  .header-section {
-    margin-top: 10vh;
-  }
-  .name {
-    font-size: calc(50 * var(--unit)) !important;
-  }
-  h2 {
-    padding: 3vh 15vw !important;
-    font-size: calc(35 * var(--unit)) !important;
-  }
-}
-
-body {
-  font-family: "Roboto", sans-serif;
-  color: rgb(36, 35, 35);
-  background-color: #f8e7b4;
-}
-.layout {
-  height: 100%;
-  width: 100%;
-
-  padding: auto;
-  border: 1px solid black;
-  display: flex;
-  flex-direction: column;
+.boops {
+  display: block;
+  height: 100vh;
+  margin: 0;
   overflow: hidden;
-  transition: all 0.5s;
-}
-.header-section {
-  height: 100%;
-  width: 100%;
-
-  align-content: center;
-  align-items: center;
-  text-align: center;
-  margin: auto;
-  margin-top: 20vh;
-}
-
-.header-title {
-  text-align: center;
-  height: 100%;
-  width: auto;
-
-  display: inline-flex;
-  justify-content: center;
-  align-items: center;
-}
-img {
-  float: left;
-  height: calc(288 * var(--unit));
-  width: calc(306 * var(--unit));
-}
-.name {
-  height: 50%;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-
-  font-size: calc(70 * var(--unit));
-  line-height: calc(1.7em + 0.5vw);
-  margin-left: 4px;
-}
-
-h2 {
-  padding: 5vh 20vw;
-  font-size: calc(30 * var(--unit));
-  font-weight: 400;
-}
-
-.name-1 {
-  background-color: #d95400;
-  transform: perspective(10px) rotateY(0.3deg);
-  margin-left: 8px;
-  padding: 4px;
-  color: #fdeaa2;
-}
-/*------------------------------ nav ---------*/
-.sidebar {
-  position: fixed;
-  display: flex;
-  flex-direction: column;
-
-  margin-top: 40vh;
-}
-li {
-  padding: 15px 10px;
-}
-a {
-  text-decoration: none;
-}
-.material-icons {
-  font-size: calc(50 * var(--unit));
-  color: #fee68e;
-}
-
-.sidebar-lists {
-  background-color: #664535;
-  padding: 40px 0;
-  clip-path: polygon(100% 16%, 100% 85%, 0 100%, 0 0);
-  transition: color 0.5s;
-}
-.nav-link .material-icons :link {
-  padding-top: 0;
-  transition: all 0.4s;
-}
-.nav-link :hover {
-  color: #dd7d32;
-  padding-left: 10px;
-}
-/*---------------------------switch -------------*/
-
-main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: background-color 0.2s;
-}
-.switch {
-  display: flex;
-  border-radius: 50px;
-  width: 3rem;
-  padding: 0.3rem;
-  background-color: #d95400;
-  transition: background-color 0.2s;
-  cursor: pointer;
   position: absolute;
-  right: 2%;
-  top: 2%;
+  top: 0;
+  z-index: 1;
+}
+.container {
+  width: 500%;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  padding: 0px;
+  overflow: hidden;
 }
 
-.btn-toggle {
-  width: 20px;
-  height: 20px;
-  border-radius: 20px;
-  background-color: rgb(255, 255, 255);
-  transition: transform 0.1s;
+.panel {
+  width: 100%;
+  height: 100%;
+
+  overflow: hidden;
 }
-/* Dark Theme */
-.dark-theme .sidebar-lists {
-  background-color: rgb(46, 46, 46);
+
+#p1 {
+  background-color: rgb(255, 229, 182);
 }
-.dark-theme .layout {
-  color: #e4e4e4;
-  background-color: rgb(32, 32, 32);
+#p2 {
+  background-color: palevioletred;
 }
-.dark-theme .nav-link .material-icons:link {
-  color: #e4e4e4;
-  transition: all 0.2s;
+#p3 {
+  background-color: yellowgreen;
 }
-.dark-theme .nav-link .material-icons:hover {
-  color: #7c7979;
+#p4 {
+  background-color: brown;
 }
-.dark-theme .switch {
-  background-color: rgba(255, 255, 255, 0.253);
+#p5 {
+  background-color: blue;
 }
-.dark-theme .material-icons {
-  color: #e4e4e4;
+
+h1 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  font-size: 19vmin;
+  transform: translateX(-50.3%) translateY(-52%);
+  cursor: pointer;
 }
-.dark-theme .btn-toggle {
-  transform: translateX(20px);
-}
-.dark-theme .material-icons {
-  font-size: calc(50 * var(--unit));
-  color: #ffffff;
-  transition: color 0.2s;
-}
-.dark-theme .name-1 {
-  background-color: rgb(46, 46, 46);
-  color: #e4e4e4;
+h2 {
+  font-weight: 300;
+  position: absolute;
+  top: 63%;
+  left: 50%;
+  text-align: center;
+  font-size: 10vmin;
+  transform: translateX(-50.3%) translateY(-52%);
+  cursor: pointer;
 }

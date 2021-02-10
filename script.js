@@ -14,7 +14,7 @@ gsap.to(sections, {
             duration: { min: 0.2, max: 0.3 },
             delay: 0
         },
-        // Base vertical scrolling on how wide the container is so it feels more natural.
+
         end: () => "+=" + (document.querySelector(".container").offsetWidth / 3)
     }
 });

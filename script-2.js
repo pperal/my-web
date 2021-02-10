@@ -4,12 +4,16 @@ const { Engine, Render, Runner, World, Bodies } = Matter;
 let engine = Engine.create();
 
 const textures = [
-    'https://assets.codepen.io/605876/bear--default-badge-large.png',
-    'https://assets.codepen.io/605876/bear--gold-badge--large.png',
-    'https://assets.codepen.io/605876/bear--silver-badge--large.png',
-    'https://assets.codepen.io/605876/bear-bronze-badge-large.png',
-    'https://assets.codepen.io/605876/bear-emerald-badge-large.png',
-    'https://assets.codepen.io/605876/bear-purple-badge-large.png'];
+    'src/face-1.png',
+    'src/face-2.png',
+    'src/face-3.png',
+    'src/face-4.png',
+    'src/face-5.png',
+    'src/face-6.png',
+    'src/face-7.png',
+    'src/face-8.png',
+    'src/face-10.png',
+    'src/face-9.png'];
 
 function init() {
 
@@ -95,7 +99,7 @@ function init() {
         World.add(engine.world, [ball2]);
         console.log("eeeee")
     };
-    setInterval(handleClick, 400)
+    setInterval(handleClick, 300)
 }
 
 init();

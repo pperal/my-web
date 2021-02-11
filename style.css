@@ -16,7 +16,7 @@
   z-index: 1;
 }
 .container {
-  width: 500%;
+  width: 300%;
   height: 100vh;
   display: flex;
   flex-wrap: nowrap;

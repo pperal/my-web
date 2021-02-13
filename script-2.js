@@ -1,4 +1,4 @@
-const world = document.querySelector(".boops");
+const world = document.querySelector(".faces");
 const { Engine, Render, Runner, World, Bodies } = Matter;
 
 let engine = Engine.create();
@@ -54,7 +54,7 @@ function init() {
         Bodies.rectangle(width + 50, height / 2, 100, height, {
             isStatic: true
         }),
-        Bodies.rectangle(width / 2, height / 2 - 45, vmin * 0.700, 0.01, {//mid box
+        Bodies.rectangle(width / 2, height / 2 - 45, vmin * 0.600, 0.001, {//mid box
             isStatic: true,
             render: {
                 fillStyle: "red"
@@ -97,7 +97,6 @@ function init() {
     const handleClick = () => {
         const ball2 = createBall();
         World.add(engine.world, [ball2]);
-        console.log("eeeee")
     };
     setInterval(handleClick, 300)
 }

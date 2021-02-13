@@ -46,9 +46,18 @@ gsap.to(config, {
     }
 });
 
-//-------------------------------------------------
+//-----------------------words page3--------------------------
 
+const itemWords = ["work", "demo", "project"];
+const itemColors = ["#055882", "#f32819", "#01908e", "#f5a508"]
 
+setInterval(e => {
+    let count = Math.floor(Math.random() * 3);
+    let color = Math.floor(Math.random() * 4);
+    let w = itemWords[count];
+    let c = itemColors[color];
+    document.getElementById('words').innerHTML = w;
+    document.getElementById('words').style.color = c;
+}, 2000);
 
-
-
+/*        slider       */

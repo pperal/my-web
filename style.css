@@ -6,7 +6,9 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
+body {
+  background-color: #f7e5b5;
+}
 :root {
   --size: 25;
   --unit: calc((var(--size) / 195) * 1vmin);
@@ -14,7 +16,7 @@
 
 @media only screen and (max-width: 2261px) {
 }
-.boops {
+.faces {
   display: block;
   height: 100vh;
   margin: 0;
@@ -39,16 +41,6 @@
   overflow: hidden;
 }
 
-#p1 {
-  background-color: #f7e5b5;
-}
-#p2 {
-  background-color: #f7e5b5;
-}
-#p3 {
-  background-color: yellowgreen;
-}
-
 h1 {
   position: absolute;
   top: 50%;
@@ -70,7 +62,7 @@ h2 {
 }
 ::-webkit-scrollbar {
   width: 10px;
-  background: #f7e5b5;
+  background-color: #f7e5b5;
 }
 
 /* Track */
@@ -80,7 +72,7 @@ h2 {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #f7e5b5;
+  background: rgb(0, 0, 0);
   border-radius: 10px;
 }
 
@@ -149,15 +141,56 @@ h2 {
   width: auto;
   height: 3%;
 }
-a {
+#nav > a {
   color: black;
   font-size: calc(35 * var(--unit));
 }
-a:hover {
-  color: rgb(8, 79, 172);
+#nav > a:hover {
+  color: #01908e;
 }
 #nav {
   position: absolute;
   bottom: 10%;
   right: 10%;
+}
+/*   ----------   page3  ------------ */
+
+.row-p3 {
+  margin-left: 10%;
+  width: 80vw;
+  height: 17vw;
+}
+.col-p3 {
+  float: left;
+  width: 32%;
+  height: 90%;
+}
+.card-p3 {
+  height: 12vw;
+  width: 17vw;
+  background-color: rgb(39, 44, 44);
+  transition: width 0.5s, height 0.5s;
+}
+.card-p3:hover {
+  width: 18vw;
+  height: 100%;
+  border-radius: 5%;
+}
+
+.img-p3 {
+  width: 17vw;
+  height: 12vw;
+  object-fit: cover;
+  border: 5px solid black;
+}
+.text-p3 {
+  color: #f7e5b5;
+  padding-left: 5%;
+  text-decoration: none;
+}
+#underlineRm {
+  text-decoration: none;
+}
+#underlineRm:hover {
+  text-decoration: underline #f7e5b5;
 }

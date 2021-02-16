@@ -1,63 +1,96 @@
-gsap.registerPlugin(ScrollTrigger);
 
-let sections = gsap.utils.toArray(".container .panel");
 
-gsap.to(sections, {
-    xPercent: -100 * (sections.length - 1),
-    ease: "none",
-    scrollTrigger: {
-        trigger: ".side-scrolling-wrapper",
-        pin: true,
-        scrub: 1,
-        snap: {
-            snapTo: 1 / (sections.length - 1),
-            duration: { min: 0.2, max: 0.3 },
-            delay: 0
-        },
+document.getElementById("page").onload = function () {
+    myFunction2("text-2")
+    myFunction2("text-3")
+    myFunction2("text-4")
+    myFunction2("text-5")
 
-        end: () => "+=" + (document.querySelector(".container").offsetWidth / 2)
+};
+var intervalId = null;
+document.getElementById("text-2").onmouseover = function () {
+    intervalId = setInterval(randomEffect, 100);
+
+};
+document.getElementById("text-2").onmouseleave = function () {
+    clearInterval(intervalId);
+    document.getElementById('text-2').innerText = ('Hello')
+
+};
+
+function myFunction2(id) {
+    const theLetters = "abcdefghijklmnopqrstuvwxyz#%&^+=-"; //You can customize what letters it will cycle through
+    let word = document.getElementById(id)
+    let w = word.textContent // Your text goes here
+    let speed = 50; // ms per frame
+    let increment = 8; // frames per step. Must be >2
+
+    let si = 0;
+    let count = 0;
+    let block = "";
+    let fixed = "";
+    //Call self x times, whole function wrapped in setTimeout
+    (function rustle(i) {
+        setTimeout(function () {
+            if (--i) { rustle(i); }
+            nextFrame(i);
+            si = si + 1;
+        }, speed);
+    })(w.length * increment + 1);
+    function nextFrame(pos) {
+        for (let i = 0; i < w.length - count; i++) {
+            //Random number
+            let num = Math.floor(theLetters.length * Math.random());
+            //Get random letter
+            let letter = theLetters.charAt(num);
+            block = block + letter;
+        }
+        if (si == (increment - 1)) {
+            count++;
+        }
+        if (si == increment) {
+            // Add a letter; 
+            // every speed*10 ms
+            fixed = fixed + w.charAt(count - 1);
+            si = 0;
+        }
+        document.getElementById(id).innerText = (fixed + block)
+        block = "";
     }
-});
-
-//////////-------------------------yoyo
+}
 
 
-let config = { strength: 1 };
 
-gsap.set("h1", { xPercent: -50, x: -1 });
-
-gsap.to("h1", {
-    repeat: -1,
-    yoyo: true,
-    x: 1,
-    duration: 0.2,
-    ease: "power1.inOut",
-    modifiers: {
-        x: gsap.utils.unitize(value => value * config.strength, "px")
+var randomEffect = function () {
+    var randomString = '';
+    const theLetters = "abcdefghijklmnopqrstuvwxyz#%&^+=-";
+    const word = document.getElementById('text-2')
+    const w = word.textContent
+    var randomString = '';
+    let w_length = w.length;
+    for (var i = 0; i < w_length; i++) {
+        var rnum = Math.floor(Math.random() * theLetters.length);
+        randomString += theLetters.substring(rnum, rnum + 1);
     }
-});
+    word.innerText = (randomString);
+}
 
-gsap.to(config, {
-    strength: 100,
-    ease: "none",
-    scrollTrigger: {
-        // defaults to using the window as the trigger, starting at the top, ending at the bottom.
-        scrub: true
-    }
-});
+//----------------------------------
 
-//-----------------------words page3--------------------------
+
+const body = document.querySelector('body')
+const toggleSwitch = document.querySelector('.switch')
+
+toggleSwitch.addEventListener('click', () => {
+    body.classList.toggle('dark-theme')
+})
+
+//-----------------------------------------
 
 const itemWords = ["work", "demo", "project"];
-const itemColors = ["#055882", "#f32819", "#01908e", "#f5a508"]
 
-setInterval(e => {
+setInterval(function () {
     let count = Math.floor(Math.random() * 3);
-    let color = Math.floor(Math.random() * 4);
     let w = itemWords[count];
-    let c = itemColors[color];
     document.getElementById('words').innerHTML = w;
-    document.getElementById('words').style.color = c;
 }, 2000);
-
-/*        slider       */

@@ -1,24 +1,24 @@
 
 
 document.getElementById("page").onload = function () {
-    myFunction2("text-2")
-    myFunction2("text-3")
-    myFunction2("text-4")
-    myFunction2("text-5")
+    randomText("text-2")
+    randomText("text-3")
+    randomText("text-4")
+    randomText("text-5")
 
 };
-var intervalId = null;
+var interval = null;
 document.getElementById("text-2").onmouseover = function () {
-    intervalId = setInterval(randomEffect, 100);
+    interval = setInterval(randomEffect, 100);
 
 };
 document.getElementById("text-2").onmouseleave = function () {
-    clearInterval(intervalId);
+    clearInterval(interval);
     document.getElementById('text-2').innerText = ('Hello')
 
 };
 
-function myFunction2(id) {
+function randomText(id) {
     const theLetters = "abcdefghijklmnopqrstuvwxyz#%&^+=-"; //You can customize what letters it will cycle through
     let word = document.getElementById(id)
     let w = word.textContent // Your text goes here
@@ -30,9 +30,9 @@ function myFunction2(id) {
     let block = "";
     let fixed = "";
     //Call self x times, whole function wrapped in setTimeout
-    (function rustle(i) {
+    (function r(i) {
         setTimeout(function () {
-            if (--i) { rustle(i); }
+            if (--i) { r(i); }
             nextFrame(i);
             si = si + 1;
         }, speed);
@@ -87,10 +87,43 @@ toggleSwitch.addEventListener('click', () => {
 
 //-----------------------------------------
 
-const itemWords = ["work", "demo", "project"];
+const perv = document.querySelector('#perv')
+const next = document.querySelector('#next')
+var demox = 0, demoy = 1
 
-setInterval(function () {
-    let count = Math.floor(Math.random() * 3);
-    let w = itemWords[count];
-    document.getElementById('words').innerHTML = w;
-}, 2000);
+var demo_count = 0;
+const pic_src = ['src/faces.png', 'src/sup.png', 'src/face-1.png', 'src/face-2.png', 'src/face-3.png', 'src/face-4.png']
+const a_src = ['https://codepen.io/ppcyel/pen/NWbdzWx']
+perv.addEventListener('click', () => {
+    if (demo_count == 0) {
+        demox = pic_src.length - 2
+        demoy = pic_src.length - 1
+        document.querySelector('#demo-1').setAttribute('src', pic_src[demox]);
+        document.querySelector('#demo-2').setAttribute('src', pic_src[demoy]);
+        demo_count = pic_src.length / 2 - 1;
+    } else {
+        demox -= 2
+        demoy -= 2
+        document.querySelector('#demo-1').setAttribute('src', pic_src[demox]);
+        document.querySelector('#demo-2').setAttribute('src', pic_src[demoy]);
+        demo_count--
+
+    }
+
+})
+next.addEventListener('click', () => {
+    if (demo_count == pic_src.length / 2 - 1) {
+        demox = 0
+        demoy = 1
+        document.querySelector('#demo-1').setAttribute('src', pic_src[demox]);
+        document.querySelector('#demo-2').setAttribute('src', pic_src[demoy]);
+        demo_count = 0;
+    } else {
+        demox += 2
+        demoy += 2
+        document.querySelector('#demo-1').setAttribute('src', pic_src[demox]);
+        document.querySelector('#demo-2').setAttribute('src', pic_src[demoy]);
+        demo_count++
+
+    }
+})

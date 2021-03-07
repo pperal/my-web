@@ -121,6 +121,10 @@ h2 {
   padding: 0.5vw;
   display: inline-block;
 }
+.demo :hover {
+  border: 5px solid #000;
+}
+
 .show-case {
   align-items: center;
   text-align: center;
@@ -173,4 +177,8 @@ h2 {
 }
 .social > a:hover {
   color: #ffbb00;
+}
+#c {
+  font-size: calc(20 * var(--unit));
+  font-weight: 500;
 }

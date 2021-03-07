@@ -1,5 +1,4 @@
 
-
 document.getElementById("page").onload = function () {
     randomText("text-2")
     randomText("text-3")
@@ -92,8 +91,8 @@ const next = document.querySelector('#next')
 var demox = 0, demoy = 1
 
 var demo_count = 0;
-const pic_src = ['src/faces.png', 'src/sup.png', 'src/face-1.png', 'src/face-2.png', 'src/face-3.png', 'src/face-4.png']
-const a_src = ['https://codepen.io/ppcyel/pen/NWbdzWx']
+const pic_src = ['src/random.png', 'src/door.png', 'src/face-1.png', 'src/face-2.png', 'src/face-3.png', 'src/face-4.png']
+const a_src = ['https://codepen.io/peralP/pen/WNoZPpa', 'https://codepen.io/peralP/pen/VwmMazz']
 perv.addEventListener('click', () => {
     if (demo_count == 0) {
         demox = pic_src.length - 2
